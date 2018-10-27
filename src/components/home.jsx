@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import axios from "axios";
+import './home.css'
 class Home extends Component {
   state = {
     persons: [],
-    name:'',
   };
+  
 
   componentDidMount() {
     axios.get(`https://jsonplaceholder.typicode.com/users`).then(res => {
@@ -13,40 +14,13 @@ class Home extends Component {
     });
   }
 
-  handleChange = event => {
-    this.setState({ name: event.target.value });
-  }
-
-  handleSubmit = event => {
-    event.preventDefault();
-
-    const user = {
-      name: this.state.name
-    };
-
-    axios.post(`https://jsonplaceholder.typicode.com/users`, { user })
-      .then(res => {
-        console.log(res);
-        console.log(res.data);
-      })
-  }
 
   render() {
     return (
       <div className="shopping-list">
-        <h1>
-          {this.props.title} {this.props.name}
-        </h1>
-        <ul>
-          {this.state.persons.map(person => (<li>{person.name}</li>))}
+        <ul className="person-list">
+          {this.state.persons.map(person => (<li key={person.id}>{person.name}</li>))}
         </ul>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Person Name:
-            <input type="text" name="name" onChange={this.handleChange} />
-          </label>
-          <button type="submit">Add</button>
-        </form>
       </div>
     );
   }

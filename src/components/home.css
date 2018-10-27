@@ -1,0 +1,22 @@
+.person-list{
+    list-style: none;
+    position: relative;
+    display: block;
+    cursor: pointer;
+    padding: 5px 15px;
+    background: lightgrey;
+    width: 100%;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    height: -webkit-fit-content !important;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
+    line-height: 1.6em;
+}
+.li{
+    height: 50px;
+    padding: 15px 5px;
+    margin: 0;
+    cursor: pointer;
+    border-right: 1px solid #0000001f;
+}

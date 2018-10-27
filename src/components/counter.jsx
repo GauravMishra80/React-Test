@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './home.css'
 const divStyle = {
  background: '#458bc8',
 };
@@ -8,19 +9,19 @@ const ulStyle = {
 
 class Counter extends Component {
   state = {
-    tags: ['tag1', 'tag2', 'tag3'],
+    tags: ['first', 'second', 'third'],
   };
   render() {
     return (
-      <div className="row">
-      <div className="col sm-12" style={divStyle}>
-        <h1>Counter App</h1>
-        <button className="btn btn-primary btn-sm">Increase Counter</button>
-        <ul style={ulStyle}>
-          {this.state.tags.map(tag => <li key={tag}>{tag}</li>)}
-        </ul>
-      </div>
-      </div>
+      <p>Counter</p>
+      // <div className="row">
+      // <div className="col sm-12">
+      //   <h1>Counter</h1>
+      //   <ul style={ulStyle} className="person-list">
+      //     {this.state.tags.map(tag => <li key={tag}>{tag}</li>)}
+      //   </ul>
+      // </div>
+      // </div>
     );
   }
 }
